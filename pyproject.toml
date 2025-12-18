@@ -2,6 +2,43 @@
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "boson-multimodal"
+version = "0.1.0"
+description = "Higgs Audio - Expressive TTS from Boson AI"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Boson AI"},
+]
+dependencies = [
+    "torch",
+    "torchaudio",
+    "transformers>=4.45.1,<4.47.0",
+    "accelerate>=0.26.0",
+    "descript-audio-codec",
+    "vector_quantize_pytorch",
+    "librosa",
+    "pydub",
+    "dacite",
+    "pydantic",
+    "omegaconf",
+    "loguru",
+    "click",
+    "pandas",
+    "json_repair",
+    "langid",
+    "jieba",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.12.0"]
+storage = ["boto3>=1.35.0", "s3fs"]
+
+[tool.setuptools.packages.find]
+include = ["boson_multimodal*"]
+
 [tool.ruff]
 line-length = 119
 target-version = "py310"
