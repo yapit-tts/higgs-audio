@@ -12,6 +12,8 @@ license = {text = "Apache-2.0"}
 authors = [
     {name = "Boson AI"},
 ]
+
+# Note: torchaudio omitted since it's not used
 dependencies = [
     "torch",
     "torchaudio",
