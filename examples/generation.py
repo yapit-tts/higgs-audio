@@ -314,7 +314,7 @@ class HiggsAudioModelClient:
                 else None,
                 audio_ids_start=torch.cumsum(
                     torch.tensor([0] + [ele.shape[1] for ele in context_audio_ids], dtype=torch.long), dim=0
-                )
+                )[:-1]
                 if context_audio_ids
                 else None,
                 audio_waveforms_concat=None,
